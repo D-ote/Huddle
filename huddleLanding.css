@@ -1,0 +1,109 @@
+body {
+    background-image: url("./huddleLandingImages/bg-desktop.svg");
+    background-size: cover;
+    background-position: center;
+    background-color: hsl(257, 40%, 49%);
+    min-height: 100vh;
+}
+
+.huddleContainer {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: "header header header header header"
+                         "sidebar sidebar sidebar main main"
+                         "footer footer footer footer footer";
+    gap: 2rem;
+}
+
+.huddleNav {
+    grid-area: header;
+    padding: 25px;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+h2 {
+    padding-top: 50px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    color: white;
+    line-height: 1.6;
+}
+
+p {
+    color:papayawhip;
+    font-size: 18px;
+}
+
+.huddleSidebar {
+    grid-area: sidebar;
+}
+
+.huddleSidebar img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.huddleCommunity {
+    grid-area: main;
+}
+
+.huddleFooter {
+    grid-area: footer;
+    display: flex;
+    justify-self: self-end;
+    padding: 20px;
+}
+
+button {
+    width: 200px;
+    height: 50px;
+    background-color: hsl(300, 69%, 71%);
+    border-radius: 30px;
+    color: white;
+    font-size: 20px;
+    border: 0;
+    box-shadow: 5px 5px 18px rgb(92, 88, 88);
+}
+
+ul {
+    list-style: none;
+    color: white;
+    font-size: 20px;
+}
+
+li {
+    margin-right: 20px;
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 992px){
+    .huddleContainer {
+        grid-template-areas: "header header header header header"
+                             "sidebar sidebar sidebar sidebar sidebar"
+                             "main main main main main"
+                             "footer footer footer footer footer";
+                             grid-template-rows: repeat(4, auto);
+    }
+    
+    .huddleCommunity {
+        text-align: center;
+    }
+
+    .huddleFooter {
+        justify-self: center;
+    }
+
+    button {
+        background-color: white;
+        color: hsl(257, 40%, 49%);
+    }
+}
